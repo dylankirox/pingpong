@@ -29,11 +29,11 @@ class Balle:
         self.canvas.move(self.id, self.x, self.y)
         pos = self.canvas.coords(self.id)
         if pos[1] <= 0:
-            self.y = 3
+            self.y = 1
         if pos[3] >= self.hauteur_canevas:
             self.touche_bas = True
         if self.heurter_raquette(pos) == True:
-            self.y = -3
+            self.y = -1
         if pos[0] <= 0:
             self.x = 3
         if pos[2] >= self.largeur_canevas:
