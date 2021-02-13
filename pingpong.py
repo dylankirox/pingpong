@@ -1,6 +1,7 @@
 from tkinter import Tk, Canvas
 import random
 import time
+import sys
 
 class Balle:
     def __init__(self, canvas, raquette, couleur):
@@ -77,6 +78,12 @@ while 1:
     if balle.touche_bas == False:
         balle.dessiner()
         raquette.dessiner()
+    else:
+        canvas.create_text(200,200,text="Perdu !", font=('Courier', 50))
+        tk.update_idletasks()
+        tk.update()
+        time.sleep(3)
+        sys.exit()
     tk.update_idletasks()
     tk.update()
     time.sleep(0.01)
