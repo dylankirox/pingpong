@@ -11,7 +11,7 @@ class Balle:
         departs = [-3, -2, -1, 1, 2, 3]
         random.shuffle(departs)
         self.x = departs[0]
-        self.y = -2
+        self.y = -1
         self.hauteur_canevas = self.canvas.winfo_height()
         self.largeur_canevas = self.canvas.winfo_width()
         self.touche_bas = False
