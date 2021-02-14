@@ -82,7 +82,7 @@ while 1:
         canvas.create_text(200,200,text="Perdu !", font=('Courier', 50))
         tk.update_idletasks()
         tk.update()
-        time.sleep(10)
+        time.sleep(3)
         sys.exit()
     tk.update_idletasks()
     tk.update()
