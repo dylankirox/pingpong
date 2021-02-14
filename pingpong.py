@@ -51,10 +51,10 @@ class Raquette:
         self.canvas.bind_all('<KeyPress-Right>', self.vers_droite)
 
     def vers_gauche(self, evt):
-        self.x = -6
+        self.x = -5
 
     def vers_droite(self, evt):
-        self.x = 6
+        self.x = 5
     def dessiner(self):
         self.canvas.move(self.id, self.x, 0)
         pos = self.canvas.coords(self.id)
