@@ -79,7 +79,7 @@ while 1:
         balle.dessiner()
         raquette.dessiner()
     else:
-        canvas.create_text(200,200,text="Perdu !", font=('Courier', 50))
+        canvas.create_text(210,210,text="Perdu !", font=('Courier', 50))
         tk.update_idletasks()
         tk.update()
         time.sleep(3)
