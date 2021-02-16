@@ -9,7 +9,7 @@ class Balle:
         self.raquette = raquette
         self.id = canvas.create_oval(10, 10, 25, 25, fill=couleur)
         self.canvas.move(self.id, 245, 100)
-        departs = [-3, -2, -1, 1, 2, 3]
+        departs = [-6,-5,-4,-3, -2, -1, 1, 2, 3, 4, 5, 6]
         random.shuffle(departs)
         self.x = departs[0]
         self.y = -1
