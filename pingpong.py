@@ -44,7 +44,7 @@ class Raquette:
     def __init__(self, canvas, couleur):
         self.canvas = canvas
         self.id = canvas.create_rectangle(0, 0, 100, 10, fill=couleur)
-        self.canvas.move(self.id, 900, 300)
+        self.canvas.move(self.id, 900, 700)
         self.x = 0
         self.y = 0
         self.largeur_canevas = self.canvas.winfo_width()
