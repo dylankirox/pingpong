@@ -50,7 +50,7 @@ class Raquette:
         self.largeur_canevas = self.canvas.winfo_width()
         self.canvas.bind_all('<KeyPress-q>', self.vers_gauche)
         self.canvas.bind_all('<KeyPress-d>', self.vers_droite)
-        self.canvas.bind_all('<KeyPress-s>', self.en_haut)
+        self.canvas.bind_all('<Button-1>', self.en_haut)
         self.canvas.bind_all('<KeyPress-z>', self.en_bas)
 
     def vers_gauche(self, evt):
