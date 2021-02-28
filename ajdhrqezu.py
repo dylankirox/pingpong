@@ -38,6 +38,7 @@ class Coords:
         self.y1 = y1
         self.x2 = x2
         self.y2 = y2
+
     def dans_x(co1, co2):
-        if (co1.x1 > co2.x1 and co1.x1 < co2.x2):
-            return True
+        if (co1.x1 > co2.x1 and co1.x1 < co2.x2) \
+            or (co1.y2 > co2.y1)
