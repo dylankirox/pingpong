@@ -46,4 +46,12 @@ class Coords:
                 or (co2.x2 > co1.x1 and co2.x2 < co1.x1):
             return True
         else:
+            return False 
+    def dans_y(self, co1, co2):
+        if (co1.y1 > co2.y1 and co1.y1 < co2.y2) \
+                or (co1.y2 > co2.y1 and co1.y2 < co2.y2) \
+                or (co2.y1 > co1.y1 and co2.y1 < co1.y2) \
+                or (co2.y2 > co1.y1 and co2.y2 < co1.y1):
+            return True
+        else:
             return False
