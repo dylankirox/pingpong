@@ -1,28 +1,29 @@
 from tkinter import Tk, Canvas, PhotoImage
 import random
 import time
+import copy
 
 class Jeu:
     def __init__(self):
         self.tk = Tk()
         self.tk.title("M.Filiforme court vers la sortie")
         self.tk.resizable(0, 0)
-        self.tk.wm_attributes("-tomopost", 1)
+        self.tk.wm_attributes("-topmost", 1)
         self.canvas = Canvas(self.tk, width=500, height=500, \
             highlightthicknes=0)
         self.canvas.pack()
         self.tk.update()
         self.hauteur_canevas = 500
         self.largeur_canevas = 500
-        self.ap = PhotoImage(file="arrière_plan.gif")
+        self.ap = PhotoImage(file='Filiforme/arriere-plan.gif')
         larg = self.ap.width()
         haut = self.ap.height()
         for x in range(0, 5):
             for y in range(0, 5):
                 self.canvas.create_image(x * larg, y * haut, \
                     image=self.ap, anchor='nw')
-                self.lutins = []
-                self.enfonction = True
+        self.lutins = []
+        self.enfonction = True
 
     def boucle_principale(self):
         while 1:
@@ -55,3 +56,43 @@ class Coords:
             return True
         else:
             return False
+        
+    def collision_gauche(self, co1, co2):
+        if self.dans_y(co1, co2):
+            if co1.x1 <= co2.x2 and co1.x1 >= co2.x1:
+                return True
+        return False
+    
+    def collision_haut(self, co1, co2):
+        if self.dans_x(co1, co2):
+            if co1.y1 <= co2.y2 and co1.y1 >= co2.y1:
+                return True
+        return False
+    
+    def collision_bas(self, y, co1, co2):
+        if self.dans_x(co1, co2):
+            y_calc = co1.y2 + y
+            if y_calc >= co2.y1 and y_calc <=co2.y2:
+                return True
+        return False
+class Lutin:
+    def __init__(self, jeu):
+        self.jeu = jeu
+        self.finjeu = False
+        self.coordonees = None
+    def deplacer(self):
+        pass
+    def coords(self):
+        return self.coordonees
+class LutinPlateForme(Lutin):
+    def __init__(self, jeu, image_photo, x, y, largeur, hauteur):
+        Lutin.__init__(self, jeu)
+        self.image_photo = image_photo
+        self.image = jeu.canvas.create_image(x, y, \
+            image=self.image_photo, anchor='nw')
+        self.coordonees = Coords(x, y, x + largeur, y + hauteur)
+
+jeu = Jeu()
+plateforme1 = LutinPlateForme(jeu, PhotoImage(\
+    file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 0, 480, 100, 10)
+jeu.boucle_principale()
