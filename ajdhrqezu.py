@@ -13,8 +13,8 @@ class Jeu:
             highlightthicknes=0)
         self.canvas.pack()
         self.tk.update()
-        self.hauteur_canevas = 1000
-        self.largeur_canevas = 1000
+        self.hauteur_canevas = 500
+        self.largeur_canevas = 500
         self.ap = PhotoImage(file='/home/vincent/Filiforme/arriere-plan.gif')
         larg = self.ap.width()
         haut = self.ap.height()
