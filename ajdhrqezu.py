@@ -99,7 +99,12 @@ plateforme2 = LutinPlateForme\
     (jeu, PhotoImage(file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 150, 440, 100, 10)
 plateforme3 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 300, 400, 100, 10)
+plateforme4 = LutinPlateForme(jeu, PhotoImage(\
+    file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 300, 160, 100, 10)
+plateforme5 = LutinPlateForme(jeu, PhotoImage(\
+    file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 300, 160, 100, 10)
 jeu.lutins.append(plateforme1)
 jeu.lutins.append(plateforme2)
 jeu.lutins.append(plateforme3)
+jeu.lutins.append(plateforme4)
 jeu.boucle_principale()
