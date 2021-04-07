@@ -13,8 +13,8 @@ class Jeu:
             highlightthicknes=0)
         self.canvas.pack()
         self.tk.update()
-        self.hauteur_canevas = 500
-        self.largeur_canevas = 500
+        self.hauteur_canevas = 1000
+        self.largeur_canevas = 1000
         self.ap = PhotoImage(file='/home/vincent/Filiforme/arriere-plan.gif')
         larg = self.ap.width()
         haut = self.ap.height()
@@ -102,9 +102,10 @@ plateforme3 = LutinPlateForme(jeu, PhotoImage(\
 plateforme4 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 300, 160, 100, 10)
 plateforme5 = LutinPlateForme(jeu, PhotoImage(\
-    file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 300, 160, 100, 10)
+    file="/home/vincent/Filiforme/Plateformes/Sans titre2.gif"), 175, 350, 66, 10)
 jeu.lutins.append(plateforme1)
 jeu.lutins.append(plateforme2)
 jeu.lutins.append(plateforme3)
 jeu.lutins.append(plateforme4)
+jeu.lutins.append(plateforme5)
 jeu.boucle_principale()
