@@ -15,7 +15,7 @@ class Jeu:
         self.tk.update()
         self.hauteur_canevas = 500
         self.largeur_canevas = 500
-        self.ap = PhotoImage(file='Filiforme/arriere-plan.gif')
+        self.ap = PhotoImage(file='/home/vincent/Filiforme/arriere-plan.gif')
         larg = self.ap.width()
         haut = self.ap.height()
         for x in range(0, 5):
