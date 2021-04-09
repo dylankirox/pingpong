@@ -92,6 +92,22 @@ class LutinPlateForme(Lutin):
             image=self.image_photo, anchor='nw')
         self.coordonees = Coords(x, y, x + largeur, y + hauteur)
 
+class LutinPersonnage(Lutin):
+    def __init__(self, jeu):
+        Lutin.__init__(self, jeu)
+        self.images_gauche = [
+            PhotoImage(file="/home/vincent/Filiforme/fil-G1.gif"),
+            PhotoImage(file="/home/vincent/Filiforme/fil-G2.gif"),
+            PhotoImage(file="/home/vincent/Filiforme/fil-G3.gif")
+        ]
+        self.images_droite = [
+            PhotoImage(file="/home/vincent/Filiforme/fil-D1.gif"),
+            PhotoImage(file="/home/vincent/Filiforme/fil-D2.gif"),
+            PhotoImage(file="/home/vincent/Filiforme/fil-D3.gif")
+        ]
+        self.image = jeu.canvas.create_image(200, 470, \
+            image=self.images_gauche[0], anchor='nw')
+
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 0, 480, 100, 10)
