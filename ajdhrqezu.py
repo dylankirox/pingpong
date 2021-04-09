@@ -103,9 +103,24 @@ plateforme4 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 300, 160, 100, 10)
 plateforme5 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre2.gif"), 175, 350, 66, 10)
+plateforme6 = LutinPlateForme(jeu, PhotoImage(\
+    file="/home/vincent/Filiforme/Plateformes/Sans titre2.gif"), 50, 300, 66, 10)
+plateforme7 = LutinPlateForme(jeu, PhotoImage(\
+    file="/home/vincent/Filiforme/Plateformes/Sans titre2.gif"), 170, 120, 66, 10)
+plateforme8 = LutinPlateForme(jeu, PhotoImage(\
+    file="/home/vincent/Filiforme/Plateformes/Sans titre2.gif"), 45, 60, 66, 10)
+plateforme9 = LutinPlateForme(jeu, PhotoImage(\
+    file="/home/vincent/Filiforme/Plateformes/Sans titre.gif"), 170, 250, 32, 10)
+plateforme10 = LutinPlateForme(jeu, PhotoImage(\
+    file="/home/vincent/Filiforme/Plateformes/Sans titre.gif"), 230, 200, 32, 10)
 jeu.lutins.append(plateforme1)
 jeu.lutins.append(plateforme2)
 jeu.lutins.append(plateforme3)
 jeu.lutins.append(plateforme4)
 jeu.lutins.append(plateforme5)
+jeu.lutins.append(plateforme6)
+jeu.lutins.append(plateforme7)
+jeu.lutins.append(plateforme8)
+jeu.lutins.append(plateforme9)
+jeu.lutins.append(plateforme10)
 jeu.boucle_principale()
