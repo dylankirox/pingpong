@@ -107,7 +107,7 @@ class LutinPersonnage(Lutin):
         ]
         self.image = jeu.canvas.create_image(200, 470, \
             image=self.images_gauche[0], anchor='nw')
-
+        
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 0, 480, 100, 10)
