@@ -110,6 +110,8 @@ class LutinPersonnage(Lutin):
         self.x = -2
         self.y = 0
         self.image_courante = 0
+        self.ajout_image_courante = 1
+        self.compte_sauts = 0
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
