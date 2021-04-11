@@ -114,7 +114,9 @@ class LutinPersonnage(Lutin):
         self.compte_sauts = 0
         self.derniere_heure = time.time()
         self.coordonees = Coords()
-        jeu.canvas.bind_all('<KeyPress-Left>')
+        jeu.canvas.bind_all('<KeyPress-Left>', self.tourner_a_gauche)
+        jeu.canvas.bind_all('<KeyPress-Right>', self.tourner_a_droite)
+        jeu.canvas.bind_all('<space>', self.sauter)
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
