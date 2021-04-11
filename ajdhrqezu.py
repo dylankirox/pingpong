@@ -112,6 +112,9 @@ class LutinPersonnage(Lutin):
         self.image_courante = 0
         self.ajout_image_courante = 1
         self.compte_sauts = 0
+        self.derniere_heure = time.time()
+        self.coordonees = Coords()
+        jeu.canvas.bind_all('<KeyPress-Left>')
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
