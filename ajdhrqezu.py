@@ -125,6 +125,14 @@ class LutinPersonnage(Lutin):
         if self.y == 0:
             self.x = 2
 
+    def sauter(self, evt):
+        if self.y == 0:
+            self.y = -4
+            self.compte_sauts = 0
+
+    def animer(self):
+        
+
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 0, 480, 100, 10)
