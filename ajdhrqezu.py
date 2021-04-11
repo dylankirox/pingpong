@@ -117,6 +117,13 @@ class LutinPersonnage(Lutin):
         jeu.canvas.bind_all('<KeyPress-Left>', self.tourner_a_gauche)
         jeu.canvas.bind_all('<KeyPress-Right>', self.tourner_a_droite)
         jeu.canvas.bind_all('<space>', self.sauter)
+    def tourner_a_gauche(self, evt):
+        if self.y == 0:
+            self.x = -2
+    
+    def tourner_a_droite(self, evt):
+        if self.y == 0:
+            self.x = 2
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
