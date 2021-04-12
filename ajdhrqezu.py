@@ -139,6 +139,15 @@ class LutinPersonnage(Lutin):
                     self.ajout_image_courante = -1
                 if self.image_courante <= 0:
                     self.ajout_image_courante = 1
+        if self.x < 0:
+            if self.y != 0:
+                self.jeu.canvas.itemconfig(self.image, image=self.images_gauche[2])
+            else:
+                self.jeu.canvas.itemconfig(self.image, \
+                    image=self.images_gauche[self.image_courante])
+        elif self.x > 0:
+            if self.y != 0:
+                self.jeu.canvas.itemconfig
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
