@@ -159,6 +159,15 @@ class LutinPersonnage(Lutin):
         self.coordonees.y2 = xy[1] + 30
         return self.coordonees
 
+    def deplacer(self):
+        self.animer()
+        if self.y < 0:
+            self.compte_sauts += 1
+            if self.compte_sauts > 20:
+                self.y = 4
+        if self.y > 0:
+            self.compte_sauts -=1
+
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 0, 480, 100, 10)
