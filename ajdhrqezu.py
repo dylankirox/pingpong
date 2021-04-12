@@ -166,7 +166,9 @@ class LutinPersonnage(Lutin):
             if self.compte_sauts > 20:
                 self.y = 4
         if self.y > 0:
-            self.compte_sauts -=1
+            self.compte_sauts -= 1
+        co = self.coords()
+        gauche = True
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
