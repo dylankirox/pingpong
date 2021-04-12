@@ -7,9 +7,11 @@ class Balle:
     def __init__(self, canvas, raquette, couleur):
         self.canvas = canvas
         self.raquette = raquette
-        self.id = canvas.create_oval(10, 10, 25, 25, fill=couleur)
+        self.id = canvas.create_oval(1, 1, 25, 25, fill=couleur)
         self.canvas.move(self.id, 245, 100)
-        departs = [-9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        departs = [-20, -19, -18, -17, -16, -15, -14, -13,-12, -11, -10, -9, -8, -7,\
+             -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, \
+                15, 16, 17, 18, 19, 20]
         random.shuffle(departs)
         self.x = departs[0]
         self.y = -1
@@ -43,15 +45,15 @@ class Balle:
 class Raquette:
     def __init__(self, canvas, couleur):
         self.canvas = canvas
-        self.id = canvas.create_rectangle(0, 0, 100, 10, fill=couleur)
-        self.canvas.move(self.id, 900, 700)
+        self.id = canvas.create_rectangle(0, 0, 50, 10, fill=couleur)
+        self.canvas.move(self.id, 500, 500)
         self.x = 0
         self.y = 0
         self.largeur_canevas = self.canvas.winfo_width()
-        self.canvas.bind_all('<KeyPress-q>', self.vers_gauche)
-        self.canvas.bind_all('<KeyPress-d>', self.vers_droite)
-        self.canvas.bind_all('<Button-1>', self.en_haut)
-        self.canvas.bind_all('<Button-2>', self.en_bas)
+        self.canvas.bind_all('<KeyPress-Left>', self.vers_gauche)
+        self.canvas.bind_all('<KeyPress-Right>', self.vers_droite)
+        self.canvas.bind_all('<KeyPress-Down>', self.en_haut)
+        self.canvas.bind_all('<KeyPress-Up>', self.en_bas)
 
     def vers_gauche(self, evt):
         self.x = -5
