@@ -147,13 +147,19 @@ class LutinPersonnage(Lutin):
                     image=self.images_gauche[self.image_courante])
         elif self.x > 0:
             if self.y != 0:
-                self.jeu.canvas.itemconfig
+                self.jeu.canvas.itemconfig(self.image, image=self.images_droite[2])
+            else:
+                self.jeu.canvas.itemconfig(self.image, \
+                    image=self.images_droite[self.image_courante])
+    def coords(self):
+        xy = self.jeu.canvas.coords(self.image)
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 0, 480, 100, 10)
 plateforme2 = LutinPlateForme\
-    (jeu, PhotoImage(file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 150, 440, 100, 10)
+    (jeu, PhotoImage(file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif")\
+        , 150, 440, 100, 10)
 plateforme3 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre3.gif"), 300, 400, 100, 10)
 plateforme4 = LutinPlateForme(jeu, PhotoImage(\
