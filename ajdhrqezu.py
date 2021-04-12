@@ -131,7 +131,14 @@ class LutinPersonnage(Lutin):
             self.compte_sauts = 0
 
     def animer(self):
-        
+        if self.x != 0 and self.y == 0:
+            if time.time() - self.derniere_heure > 0.1:
+                self.derniere_heure = time.time()
+                self.image_courante += self.ajout_image_courante
+                if self.image_courante >= 2:
+                    self.ajout_image_courante = -1
+                if self.image_courante <= 0:
+                    self.ajout_image_courante = 1
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
