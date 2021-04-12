@@ -153,6 +153,11 @@ class LutinPersonnage(Lutin):
                     image=self.images_droite[self.image_courante])
     def coords(self):
         xy = self.jeu.canvas.coords(self.image)
+        self.coordonees.x1 = xy[0]
+        self.coordonees.y1 = xy[1]
+        self.coordonees.x2 = xy[0] + 27
+        self.coordonees.y2 = xy[1] + 30
+        return self.coordonees
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
