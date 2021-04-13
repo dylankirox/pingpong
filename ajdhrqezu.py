@@ -203,6 +203,8 @@ class LutinPersonnage(Lutin):
                 tombe = False
             if gauche and self.x < 0 and collision_gauche(co, co_lutin):
                 self.x = 0
+                gauche = False
+            if droite and self.x > 0 and collision_droite
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
