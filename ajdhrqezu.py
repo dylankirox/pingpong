@@ -175,6 +175,19 @@ class LutinPersonnage(Lutin):
         tombe = True
         if self.y > 0 and co.y2 >= self.jeu.hauteur_canevas:
             self.y = 0
+            bas = False
+        elif self.y < 0 and co.y1 <= 0:
+            self.y = 0
+            haut = False
+        if self.x > 0 and co.x2 >= self.jeu.largeur_canevas:
+            self.x = 0
+            droite = False
+        elif self.x < 0 and co.x1 <= 0:
+            self.x = 0
+            gauche = False
+        for  lutin in self.jeu.lutins:
+            if lutin == self:
+                continue
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
