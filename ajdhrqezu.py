@@ -192,6 +192,17 @@ class LutinPersonnage(Lutin):
             if haut and self.y < 0 and collision_haut(co, co_lutin):
                 self.y = -self.y
                 haut = False
+            if bas and self.y > 0 and collision_bas(self.y, co, co_lutin):
+                self.y = co_lutin.y1 - co.y2
+                if self.y < 0:
+                    self.y = 0
+                bas = False
+                haut = False
+            if bas and tombe and self.y == 0 and co.y2 < self.jeu.hauteur_canevas \
+                and collision_bas(1, co, co_lutin):
+                tombe = False
+            if gauche and self.x < 0 and collision_gauche(co, co_lutin):
+                self.x = 0
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
