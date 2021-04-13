@@ -189,7 +189,9 @@ class LutinPersonnage(Lutin):
             if lutin == self:
                 continue
             co_lutin = lutin.coords()
-            if haut and self.y < 0 and collision_haut(co, co_lutin)
+            if haut and self.y < 0 and collision_haut(co, co_lutin):
+                self.y = -self.y
+                haut = False
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
