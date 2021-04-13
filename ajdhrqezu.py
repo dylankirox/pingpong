@@ -188,6 +188,8 @@ class LutinPersonnage(Lutin):
         for  lutin in self.jeu.lutins:
             if lutin == self:
                 continue
+            co_lutin = lutin.coords()
+            
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
