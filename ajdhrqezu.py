@@ -25,7 +25,7 @@ class Jeu:
         self.lutins = []
         self.enfonction = True
 
-    def boucle_principale(self):
+    def boucle__principale(self):
         while 1:
             if self.enfonction == True:
                 for lutin in self.lutins:
@@ -213,9 +213,19 @@ class LutinPersonnage(Lutin):
             if droite and self.x > 0 and self.coordonees.collision_droite(co, co_lutin):
                 self.x = 0
                 droite = False
+                if lutin.finjeu:
+                    self.jeu.enfon = False
         if tombe and bas and self.y == 0 and co.y2 < self.jeu.hauteur_canevas:
             self.y = 4
         self.jeu.canvas.move(self.image, self.x, self.y)
+
+class LutinPorte(Lutin):
+    def __init__(self, jeu, image_photo, x, y, largeur, hauteur):
+        Lutin.__init__(self, jeu)
+        self.image_photo = image_photo
+        self.image = jeu.canvas.create_image(x, y, image=self.image_photo, anchor='nw')
+        self.coordonees = Coords(x, y, x + (largeur / 2), y + hauteur)
+        self.finjeu = True
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
@@ -239,6 +249,8 @@ plateforme9 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre.gif"), 170, 250, 32, 10)
 plateforme10 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre.gif"), 230, 200, 32, 10)
+porte = LutinPorte(jeu, PhotoImage(file="/home/vincent/Filiforme/Porte/porte1.gif"), 45, \
+    30, 40, 35)
 personnage = LutinPersonnage(jeu)
 jeu.lutins.append(plateforme1)
 jeu.lutins.append(plateforme2)
@@ -251,4 +263,5 @@ jeu.lutins.append(plateforme8)
 jeu.lutins.append(plateforme9)
 jeu.lutins.append(plateforme10)
 jeu.lutins.append(personnage)
-jeu.boucle_principale()
+jeu.lutins.append(porte)
+jeu.boucle__principale()
