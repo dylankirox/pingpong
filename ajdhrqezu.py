@@ -56,7 +56,13 @@ class Coords:
             return True
         else:
             return False
-        
+
+    def collision_droite(self, co1, co2):
+        if self.dans_y(co1, co2):
+            if co1.x2 >= co2.x1 and co1.x2 >= co2.x2:
+                return True
+        return False
+
     def collision_gauche(self, co1, co2):
         if self.dans_y(co1, co2):
             if co1.x1 <= co2.x2 and co1.x1 >= co2.x1:
@@ -189,25 +195,27 @@ class LutinPersonnage(Lutin):
             if lutin == self:
                 continue
             co_lutin = lutin.coords()
-            if haut and self.y < 0 and collision_haut(co, co_lutin):
+            if haut and self.y < 0 and self.coordonees.collision_haut(co, co_lutin):
                 self.y = -self.y
                 haut = False
-            if bas and self.y > 0 and collision_bas(self.y, co, co_lutin):
+            if bas and self.y > 0 and self.coordonees.collision_bas(self.y, co, co_lutin):
                 self.y = co_lutin.y1 - co.y2
                 if self.y < 0:
                     self.y = 0
                 bas = False
                 haut = False
             if bas and tombe and self.y == 0 and co.y2 < self.jeu.hauteur_canevas \
-                and collision_bas(1, co, co_lutin):
+                and self.coordonees.collision_bas(1, co, co_lutin):
                 tombe = False
-            if gauche and self.x < 0 and collision_gauche(co, co_lutin):
+            if gauche and self.x < 0 and self.coordonees.collision_gauche(co, co_lutin):
                 self.x = 0
                 gauche = False
-            if droite and self.x > 0 and collision_droite(co, co_lutin):
+            if droite and self.x > 0 and self.coordonees.collision_droite(co, co_lutin):
                 self.x = 0
                 droite = False
-        if tombe and bas and self.y == 0 and 
+        if tombe and bas and self.y == 0 and co.y2 < self.jeu.hauteur_canevas:
+            self.y = 4
+        self.jeu.canvas.move(self.image, self.x, self.y)
 
 jeu = Jeu()
 plateforme1 = LutinPlateForme(jeu, PhotoImage(\
@@ -231,6 +239,7 @@ plateforme9 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre.gif"), 170, 250, 32, 10)
 plateforme10 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre.gif"), 230, 200, 32, 10)
+personnage = LutinPersonnage(jeu)
 jeu.lutins.append(plateforme1)
 jeu.lutins.append(plateforme2)
 jeu.lutins.append(plateforme3)
@@ -241,4 +250,5 @@ jeu.lutins.append(plateforme7)
 jeu.lutins.append(plateforme8)
 jeu.lutins.append(plateforme9)
 jeu.lutins.append(plateforme10)
+jeu.lutins.append(personnage)
 jeu.boucle_principale()
