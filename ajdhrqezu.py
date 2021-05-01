@@ -9,7 +9,7 @@ class Jeu:
         self.tk.title("M.Filiforme court vers la sortie")
         self.tk.resizable(0, 0)
         self.tk.wm_attributes("-topmost", 1)
-        self.canvas = Canvas(self.tk, width=500, height=500, \
+        self.canvas = Canvas(self.tk, width=501, height=501, \
             highlightthicknes=0)
         self.canvas.pack()
         self.tk.update()
