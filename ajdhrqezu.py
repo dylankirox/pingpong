@@ -2,7 +2,7 @@ from tkinter import Tk, Canvas, PhotoImage
 import random
 import time
 import copy
-
+                                                 
 class Jeu:
     def __init__(self):
         self.tk = Tk()
@@ -249,7 +249,7 @@ plateforme9 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre.gif"), 170, 250, 32, 10)
 plateforme10 = LutinPlateForme(jeu, PhotoImage(\
     file="/home/vincent/Filiforme/Plateformes/Sans titre.gif"), 230, 200, 32, 10)
-porte = LutinPorte(jeu, PhotoImage(file="/home/vincent/Filiforme/Porte/porte1.gif"), 45, \
+porte = LutinPorte(jeu, PhotoImage(file="/home/vincent/Filiforme/Porte/Porte.gif"), 45, \
     30, 40, 35)
 personnage = LutinPersonnage(jeu)
 jeu.lutins.append(plateforme1)

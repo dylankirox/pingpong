@@ -45,7 +45,7 @@ class Balle:
 class Raquette:
     def __init__(self, canvas, couleur):
         self.canvas = canvas
-        self.id = canvas.create_rectangle(0, 0, 50, 10, fill=couleur)
+        self.id = canvas.create_rectangle(0, 0, 100, 300, fill=couleur)
         self.canvas.move(self.id, 500, 500)
         self.x = 0
         self.y = 0
