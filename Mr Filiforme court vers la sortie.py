@@ -1,7 +1,8 @@
-#Mr Filiforme est un agent secret (CIA ou FBI,on sait plus trop) piégé dans l'antre du docteur Inoffensif
+#Mr Filiforme est un agent secret (CIA ou FBI,on sait plus trop) piégé dans l'antre du sadique docteur Inoffensif
 #Il doit s'échapper à temps sinon l'antre explose!!!
 
-
+#Utilisez les flèches droite et gauche et celle du haut/espace pour se déplacer.
+#Il faut sauter de plate-forme en plate-forme jusqu'à la porte.
 
 
 
