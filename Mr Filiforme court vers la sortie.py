@@ -1,6 +1,6 @@
 #Mr Filiforme est un agent secret (CIA ou FBI,on sait plus trop) piégé dans l'antre du sadique docteur Inoffensif
 #Il doit s'échapper à temps sinon l'antre explose!!!
-
+#Vous avez 5 niveaux de difficulté,5 est le plus facile et 1 est le plus difficile
 #Utilisez les flèches droite et gauche et celle du haut/espace pour se déplacer.
 #Il faut sauter de plate-forme en plate-forme jusqu'à la porte.
 
@@ -8,7 +8,7 @@
 
 
 
-
+#Ceci est en Python(il faut le copier-coller jusqu'à un Shell)
 #à jouer avec cette musique : https://www.youtube.com/watch?v=HP5ObKozM8Q
 from tkinter import *
 import random
