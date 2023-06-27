@@ -1,3 +1,14 @@
+#Mr Filiforme est un agent secret (CIA ou FBI,on sait plus trop) piégé dans l'antre du docteur Inoffensif
+#Il doit s'échapper à temps sinon l'antre explose!!!
+
+
+
+
+
+
+
+
+#à jouer avec cette musique : https://www.youtube.com/watch?v=HP5ObKozM8Q
 from tkinter import *
 import random
 import time
