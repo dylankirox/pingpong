@@ -14,6 +14,7 @@
 from tkinter import *
 import random
 import time
+import sys
 
 class Jeu:
     def __init__(self):
@@ -214,6 +215,7 @@ class LutinPersonnage(Lutin):
                     self.jeu.enfonction = False
                     print("You win")
                     print("You escaped at time")
+                    sys.exit
             if droite and self.x > 0 and collision_droite(co, co_lutin):
                 self.x = 0
                 droite = False
@@ -221,6 +223,7 @@ class LutinPersonnage(Lutin):
                     self.jeu.enfonction = False
                     print("You win")
                     print("You escaped at time")
+                    sys.exit
         if tombe and bas and self.y == 0 and co.y2 < self.jeu.hauteur_canevas:
             self.y = 4
         self.jeu.canvas.move(self.image, self.x, self.y)
