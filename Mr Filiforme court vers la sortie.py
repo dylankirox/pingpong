@@ -3,6 +3,7 @@
 #Vous avez 5 niveaux de difficulté,5 est le plus facile et 1 est le plus difficile
 #Utilisez les flèches droite et gauche et celle du haut/espace pour se déplacer.
 #Il faut sauter de plate-forme en plate-forme jusqu'à la porte.
+#il faut taper les commandes "(sudo) pip install Tkinter","(sudo) (pip)(apt) install time,random".
 
 
 
