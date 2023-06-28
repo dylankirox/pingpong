@@ -36,6 +36,7 @@ class Jeu:
         self.lutins = []
         self.enfonction = True
     def boucle_principale(self):
+        
         while 1:
             if self.enfonction == True:
                 for lutin in self.lutins:
@@ -268,4 +269,52 @@ jeu.lutins.append(plateforme9)
 jeu.lutins.append(plateforme10)
 jeu.lutins.append(personnage)
 jeu.lutins.append(porte)
-jeu.boucle_principale()
+print('tape le niveau de difficulé(5=facile et 1 = Difficile)')
+print('si tu veux un autre niveau,tape autre chose que un nombre entre 1 et 5 mais un nombre entier')
+niveau = input()
+n = int(niveau)
+l = 'Votre niveau est le %s.'
+if n == 1 or 2 or 3 or 4 or 5:
+    print('bien reçu : votre niveau a été enregistré')
+    print(l % n)
+if n == 1:
+    jeu.boucle_principale()
+    print('Vous avez 40 secondes')
+    time.sleep(40)
+    print("Tu as perdu:l\'antre a explosé")
+    sys.exit
+if n == 2:
+    print('Vous avez 50 secondes')
+    jeu.boucle_principale()
+    time.sleep(50)
+    print("Tu as perdu:l\'antre a explosé")
+    sys.exit
+if n == 3:
+    print('Vous avez 1 minute')
+    jeu.boucle_principale()
+    time.sleep(60)
+    print("Tu as perdu:l\'antre a explosé")
+    sys.exit
+if n == 4:
+    print('Vous avez 1 minute 10')
+    jeu.boucle_principale()
+    time.sleep(70)
+    print("Tu as perdu:l\'antre a explosé")
+    sys.exit
+if n == 5:
+    print('Vous avez 1 minute 20')
+    jeu.boucle_principale()
+    time.sleep(80)
+    print("Tu as perdu:l\'antre a explosé")
+    sys.exit
+if n != 1 or 2 or 3 or 4 or 5:
+    print("Combien de secondes avant que ça explose veux-tu?")
+    print('Précision : si vous avez déjà répondu,tapez 0.')
+    niveau2 = input()
+    m = int(niveau2)
+    o = 'Bien reçu : vous voulez %s secondes'
+    print(o % m)
+    jeu.boucle_principale()
+    time.sleep(m)
+    print("Tu as perdu:l\'antre a explosé")
+    sys.exit
