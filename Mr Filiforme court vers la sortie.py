@@ -50,12 +50,18 @@ class Coords:
         self.x2 = x2
         self.y2 = y2
     def dans_x(co1,co2):
-        if (co1.x1 > co2.x1 and co1.x1 < co2.x2) or (co1.x2 > co2.x1 and co1.x2 < co2.x2) or (co2.x1 > co1.x1 and co2.x1 < co1.x2) or (co2.x2 > co1.x1 and co2.x2 < co1.x1):
+        if (co1.x1 > co2.x1 and co1.x1 < co2.x2) \
+        or (co1.x2 > co2.x1 and co1.x2 < co2.x2) \
+        or (co2.x1 > co1.x1 and co2.x1 < co1.x2) \
+        or (co2.x2 > co1.x1 and co2.x2 < co1.x1):
             return True
         else:
             return False
     def dans_y(co1,co2):
-        if (co1.y1 > co2.y1 and co1.y1 < co2.y2) or (co1.y2 > co2.y1 and co1.y2 < co2.y2) or (co2.y1 > co1.y1 and co2.y1 < co1.y2) or (co2.y2 > co1.y1 and co2.y2 < co1.y1):
+        if (co1.y1 > co2.y1 and co1.y1 < co2.y2) \
+        or (co1.y2 > co2.y1 and co1.y2 < co2.y2) \
+        or (co2.y1 > co1.y1 and co2.y1 < co1.y2) \
+        or (co2.y2 > co1.y1 and co2.y2 < co1.y1):
             return True
         else:
             return False
@@ -66,7 +72,7 @@ class Coords:
         return False
     def collision_droite(co1,co2):
         if dans_y(co1,co2):
-            if co1.x2 <= co2.x1 and co1.x2 >= co2.x2:
+            if co1.x2 >= co2.x1 and co1.x2 <= co2.x2:
                 return True
         return False 
     def collision_haut(co1,co2):
@@ -77,7 +83,7 @@ class Coords:
     def collision_bas(y, co1,co2):
         if dans_x(co1,co2):
             y_calc = co1.y2 + y
-            if y_calc <= co2.y2 and y_calc >= co2.y1:
+            if y_calc >= co2.y1 and y_calc <= co2.y2:
                 return True
         return False
 
@@ -158,7 +164,7 @@ class LutinPersonnage(Lutin):
         self.coordonnees.x1 = xy[0]
         self.coordonnees.y1 = xy[1]
         self.coordonnees.x2 = xy[0] + 27
-        self.coordonnees.y2 = xy[0] + 30
+        self.coordonnees.y2 = xy[1] + 30
         return self.coordonnees
     def deplacer(self):
         self.animer()
@@ -184,7 +190,7 @@ class LutinPersonnage(Lutin):
             self.x = 0
             droite = False
         elif self.x < 0 and co.x1 <= 0:
-            self.y = 0
+            self.x = 0
             gauche = False
         for lutin in self.jeu.lutins:
             if lutin == self:
@@ -208,7 +214,7 @@ class LutinPersonnage(Lutin):
                     self.jeu.enfonction = False
                     print("You win")
                     print("You escaped at time")
-            if gauche and self.x > 0 and collision_droite(co, co_lutin):
+            if droite and self.x > 0 and collision_droite(co, co_lutin):
                 self.x = 0
                 droite = False
                 if lutin.finjeu:
@@ -259,4 +265,4 @@ jeu.lutins.append(plateforme9)
 jeu.lutins.append(plateforme10)
 jeu.lutins.append(personnage)
 jeu.lutins.append(porte)
-jeu.boucle_principale
+jeu.boucle_principale()
