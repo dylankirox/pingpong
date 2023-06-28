@@ -92,7 +92,7 @@ class Lutin:
         self.jeu = jeu
         self.finjeu = False
         self.coordonnees = None
-    def deplacer(self):
+    def deplacer(self, coords):
         pass
     def coords(self):
         return self.coordonnees
@@ -166,7 +166,7 @@ class LutinPersonnage(Lutin):
         self.coordonnees.x2 = xy[0] + 27
         self.coordonnees.y2 = xy[1] + 30
         return self.coordonnees
-    def deplacer(self):
+    def deplacer(self, coords):
         self.animer()
         if self.y < 0:
             self.compte_sauts +=1
